@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>СТАРТ — Автошкола в Алматы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <!-- СТАРТ SVG логотип -->
+    <svg viewBox="0 0 130 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Letters: С Т А Р Т -->
+      <!-- С -->
+      <text x="-2" y="40" font-family="Arial Black, sans-serif" font-size="36" font-weight="900" fill="#F0EDE8" letter-spacing="-1">С</text>
+      <!-- Т -->
+      <text x="25" y="40" font-family="Arial Black, sans-serif" font-size="36" font-weight="900" fill="#F0EDE8" letter-spacing="-1">Т</text>
+      <!-- Steering wheel as А -->
+      <g transform="translate(56, 7)">
+        <!-- Red triangle / arrow pointing up -->
+        <polygon points="9,0 4,8 14,8" fill="#D62B2B"/>
+        <!-- Steering wheel body -->
+        <circle cx="9" cy="22" r="12" fill="none" stroke="#D62B2B" stroke-width="2.8"/>
+        <circle cx="9" cy="22" r="4" fill="none" stroke="#D62B2B" stroke-width="2.2"/>
+        <!-- Spokes -->
+        <line x1="9" y1="18" x2="9" y2="10.5" stroke="#D62B2B" stroke-width="2.2"/>
+        <line x1="5.5" y1="24.5" x2="0" y2="28" stroke="#D62B2B" stroke-width="2.2"/>
+        <line x1="12.5" y1="24.5" x2="18" y2="28" stroke="#D62B2B" stroke-width="2.2"/>
+      </g>
+      <!-- Р -->
+      <text x="78" y="40" font-family="Arial Black, sans-serif" font-size="36" font-weight="900" fill="#F0EDE8" letter-spacing="-1">Р</text>
+      <!-- Т -->
+      <text x="104" y="40" font-family="Arial Black, sans-serif" font-size="36" font-weight="900" fill="#F0EDE8">Т</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#why">О нас</a></li>
+    <li><a href="#pricing">Тарифы</a></li>
+    <li><a href="#team">Инструкторы</a></li>
+    <li><a href="#contact" class="nav-cta">Записаться</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Автошкола в Алматы</div>
+    <h1>Уроки<br>вождения<br>с <span>опытными</span><br>инструкторами</h1>
+    <p class="hero-desc">Индивидуальные занятия по городу и автодрому. Гибкий график, современные автомобили, реальные результаты.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">500<span>+</span></div>
+        <div class="stat-label">Выпускников</div>
+      </div>
+      <div>
+        <div class="stat-num">8<span>+</span></div>
+        <div class="stat-label">Лет опыта</div>
+      </div>
+      <div>
+        <div class="stat-num">96<span>%</span></div>
+        <div class="stat-label">Сдают с 1 раза</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-bg-img"></div>
+    <div class="form-card" id="contact">
+      <h2>Записаться на урок</h2>
+      <p>Оставьте заявку — мы свяжемся в течение 15 минут</p>
+
+      <div id="formWrap">
+        <div class="form-group">
+          <label>Имя и Фамилия</label>
+          <input type="text" id="name" placeholder="Айдана Сейткали" autocomplete="name"/>
+          <div class="error-msg" id="nameErr">Введите имя и фамилию</div>
+        </div>
+
+        <div class="form-group">
+          <label>Номер телефона</label>
+          <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel"/>
+          <div class="error-msg" id="phoneErr">Введите корректный номер (+7 или 8)</div>
+        </div>
+
+        <div class="form-group">
+          <label>Район Алматы</label>
+          <select id="district">
+            <option value="">Выберите район</option>
+            <option>Алмалинский район</option>
+            <option>Алатауский район</option>
+            <option>Ауэзовский район</option>
+            <option>Бостандыкский район</option>
+            <option>Жетысуский район</option>
+            <option>Медеуский район</option>
+            <option>Наурызбайский район</option>
+            <option>Турксибский район</option>
+          </select>
+          <div class="error-msg" id="districtErr">Выберите район</div>
+        </div>
+
+        <div class="form-group">
+          <label>Тип урока</label>
+          <select id="lessonType">
+            <option value="">Выберите тип урока</option>
+            <option>Урок по городу — 9 000 ₸</option>
+            <option>Урок на автодроме — 8 000 ₸</option>
+            <option>Комбинированный урок — 9 000 ₸</option>
+          </select>
+          <div class="error-msg" id="lessonErr">Выберите тип урока</div>
+        </div>
+
+        <button class="btn-submit" id="submitBtn" onclick="submitForm()">
+          Записаться на пробный урок →
+        </button>
+      </div>
+
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">✅</div>
+        <h3>Заявка принята!</h3>
+        <p>Наш инструктор свяжется с вами в течение 15 минут.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">↓ Узнать больше</div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-header fade-up">
+    <div>
+      <div class="section-line"><span>Наши преимущества</span></div>
+      <h2>Почему выбирают<br>именно нас</h2>
+    </div>
+    <p>Мы предлагаем уроки вождения по городу и автодрому. Наши услуги помогут вам улучшить навыки вождения.</p>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card fade-up" data-n="01">
+      <div class="why-icon">🎓</div>
+      <h3>Опытные инструкторы</h3>
+      <p>Наши инструкторы имеют большой опыт и готовы поделиться знаниями. Индивидуальный подход к каждому.</p>
+    </div>
+    <div class="why-card fade-up" data-n="02" style="transition-delay:0.1s">
+      <div class="why-icon">🚗</div>
+      <h3>Современные автомобили</h3>
+      <p>Для занятий используем хорошие автомобили с двойным управлением, что обеспечивает комфорт и безопасность.</p>
+    </div>
+    <div class="why-card fade-up" data-n="03" style="transition-delay:0.2s">
+      <div class="why-icon">💰</div>
+      <h3>Доступные цены</h3>
+      <p>Мы предлагаем уроки вождения по доступным ценам, чтобы каждый мог научиться уверенно водить автомобиль.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-header fade-up">
+    <div>
+      <div class="section-line"><span>Тарифы</span></div>
+      <h2>Наши тарифы</h2>
+    </div>
+    <p>Выучите правила дорожного движения и научитесь уверенно управлять автомобилем.</p>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="price-card fade-up">
+      <div class="price-type">Базовый</div>
+      <h3>Урок по городу</h3>
+      <p class="desc">Обучение вождению в городских условиях с опытным инструктором</p>
+      <div class="price-amount">9 000 ₸</div>
+      <div class="price-per">за одно занятие (90 мин)</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li>Обучение вождению по городу</li>
+        <li>Сопровождение опытного инструктора</li>
+        <li>Использование учебного автомобиля</li>
+      </ul>
+      <button class="btn-book btn-book-outline" onclick="scrollToForm('Урок по городу — 9 000 ₸')">Записаться</button>
+    </div>
+
+    <div class="price-card featured fade-up" style="transition-delay:0.1s">
+      <div class="price-badge">Популярный</div>
+      <div class="price-type">Рекомендуем</div>
+      <h3>Урок на автодроме</h3>
+      <p class="desc">Отработка основных навыков вождения на закрытой площадке</p>
+      <div class="price-amount">8 000 ₸</div>
+      <div class="price-per">за одно занятие (90 мин)</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li>Обучение на автодроме</li>
+        <li>Сопровождение опытного инструктора</li>
+        <li>Использование учебного автомобиля</li>
+      </ul>
+      <button class="btn-book btn-book-filled" onclick="scrollToForm('Урок на автодроме — 8 000 ₸')">Записаться</button>
+    </div>
+
+    <div class="price-card fade-up" style="transition-delay:0.2s">
+      <div class="price-type">Максимум</div>
+      <h3>Комбинированный</h3>
+      <p class="desc">Урок по городу и на автодроме в одном занятии</p>
+      <div class="price-amount">9 000 ₸</div>
+      <div class="price-per">за одно занятие (90 мин)</div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li>Урок по городу</li>
+        <li>Урок на автодроме</li>
+        <li>Сопровождение опытного инструктора</li>
+        <li>Использование учебного автомобиля</li>
+      </ul>
+      <button class="btn-book btn-book-outline" onclick="scrollToForm('Комбинированный урок — 9 000 ₸')">Записаться</button>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-header fade-up">
+    <div>
+      <div class="section-line"><span>Команда</span></div>
+      <h2>Наша команда<br>автоинструкторов</h2>
+    </div>
+    <p>Мы гордимся своей командой профессионалов, готовых помочь вам освоить навыки вождения.</p>
+  </div>
+
+  <div class="team-grid">
+    <div class="team-card fade-up">
+      <div class="team-img-placeholder">👨‍🏫</div>
+      <div class="team-info">
+        <h3>Анна<br>Смирнова</h3>
+        <span>Автоинструктор</span>
+        <h3>Автомобиль: <p>Honda&nbspCivic (АКПП,бензин&nbsp1.6)</p></h3>
+        <h3>Район: <p>Алмалинский</p></h3>
+        <a href="https://wa.me/77473045000?text=Здраствуйте,%20хочу%20записаться%20к%20Анне%20Смирновой" class="btn-book btn-book-filled" target="_blank" >Записаться</a>
+      </div>
+    </div>
+    <div class="team-card fade-up" style="transition-delay:0.1s">
+      <div class="team-img-placeholder">👨‍🏫</div>
+      <div class="team-info">
+        <h3>Иван<br>Петров</h3>
+        <span>Автоинструктор</span>
+        <h3>Автомобиль: <p>Honda&nbspCivic (АКПП,бензин&nbsp1.6)</p></h3>
+        <h3>Район: <p>Алмалинский</p></h3>
+        <a href="https://wa.me/77473045000?text=Здраствуйте,%20хочу%20записаться%20к%20Ивану%20Петрову" class="btn-book btn-book-filled" target="_blank" >Записаться</a>
+      </div>
+    </div>
+    <div class="team-card fade-up" style="transition-delay:0.2s">
+      <div class="team-img-placeholder">👩‍🏫</div>
+      <div class="team-info">
+        <h3>Мария<br>Кузнецова</h3>
+        <span>Автоинструктор</span>
+        <h3>Автомобиль: <p>Honda&nbspCivic (АКПП,бензин&nbsp1.6)</p></h3>
+        <h3>Район: <p>Алмалинский</p></h3>
+        <a href="https://wa.me/77473045000?text=Здраствуйте,%20хочу%20записаться%20к%20Марии%20Кузнецовой" class="btn-book btn-book-filled" target="_blank" >Записаться</a>
+      </div>
+    </div>
+    <div class="team-card fade-up" style="transition-delay:0.3s">
+      <div class="team-img-placeholder">👨‍🏫</div>
+      <div class="team-info">
+        <h3>Сергей<br>Николаев</h3>
+        <span>Автоинструктор</span>
+        <h3>Автомобиль: <p>Honda&nbspCivic (АКПП,бензин&nbsp1.6)</p></h3>
+        <h3>Район: <p>Алмалинский</p></h3>
+        <a href="https://wa.me/77473045000?text=Здраствуйте,%20хочу%20записаться%20к%20Сергею%20Николаеву" class="btn-book btn-book-filled" target="_blank" >Записаться</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2025 Автошкола СТАРТ, Алматы. Все права защищены.</div> 
+  <a href="tel:+77473045000" class="footer-phone">+7 (747) 304-50-00</a>
+</footer>
+
+<script>
+  // ── PHONE MASK ──
+  const phoneInput = document.getElementById('phone');
+  phoneInput.addEventListener('input', function(e) {
+    let v = e.target.value.replace(/\D/g, '');
+    if (v.startsWith('8')) v = '7' + v.slice(1);
+    if (v.startsWith('7')) {
+      let m = v.match(/^(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})$/);
+      e.target.value = !m[2] ? (m[1] ? '+7' : '')
+        : '+7 (' + m[2] + (m[3] ? ') ' + m[3] : '')
+        + (m[4] ? '-' + m[4] : '')
+        + (m[5] ? '-' + m[5] : '');
+    } else {
+      e.target.value = v ? '+' + v : '';
+    }
+  });
+
+  // ── VALIDATION ──
+  function validate() {
+    let ok = true;
+
+    const name = document.getElementById('name').value.trim();
+    const nameErr = document.getElementById('nameErr');
+    const nameInp = document.getElementById('name');
+    const nameParts = name.split(/\s+/).filter(Boolean);
+    if (nameParts.length < 2) {
+      nameErr.classList.add('show');
+      nameInp.classList.add('error');
+      ok = false;
+    } else {
+      nameErr.classList.remove('show');
+      nameInp.classList.remove('error');
+    }
+
+    const phone = document.getElementById('phone').value.replace(/\D/g, '');
+    const phoneErr = document.getElementById('phoneErr');
+    const phoneInp = document.getElementById('phone');
+    if (phone.length < 11 || !phone.startsWith('7')) {
+      phoneErr.classList.add('show');
+      phoneInp.classList.add('error');
+      ok = false;
+    } else {
+      phoneErr.classList.remove('show');
+      phoneInp.classList.remove('error');
+    }
+
+    const district = document.getElementById('district').value;
+    const districtErr = document.getElementById('districtErr');
+    const districtSel = document.getElementById('district');
+    if (!district) {
+      districtErr.classList.add('show');
+      districtSel.classList.add('error');
+      ok = false;
+    } else {
+      districtErr.classList.remove('show');
+      districtSel.classList.remove('error');
+    }
+
+    const lesson = document.getElementById('lessonType').value;
+    const lessonErr = document.getElementById('lessonErr');
+    const lessonSel = document.getElementById('lessonType');
+    if (!lesson) {
+      lessonErr.classList.add('show');
+      lessonSel.classList.add('error');
+      ok = false;
+    } else {
+      lessonErr.classList.remove('show');
+      lessonSel.classList.remove('error');
+    }
+
+    return ok;
+  }
+
+  // ── SUBMIT ──
+  async function submitForm() {
+    if (!validate()) return;
+
+    const btn = document.getElementById('submitBtn');
+    btn.classList.add('loading');
+    btn.textContent = 'Отправляем...';
+
+    const payload = {
+      name: document.getElementById('name').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      district: document.getElementById('district').value,
+      lessonType: document.getElementById('lessonType').value
+    };
+
+    try {
+      const res = await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.ok) {
+        document.getElementById('formWrap').style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (e) {
+      btn.classList.remove('loading');
+      btn.textContent = 'Записаться на пробный урок →';
+      alert('Ошибка отправки. Пожалуйста, позвоните нам напрямую.');
+    }
+  }
+
+  // ── SCROLL TO FORM & PRE-SELECT ──
+  function scrollToForm(lessonValue) {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      const sel = document.getElementById('lessonType');
+      for (let i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].text === lessonValue) {
+          sel.selectedIndex = i;
+          break;
+        }
+      }
+    }, 600);
+  }
+
+  // ── SCROLL ANIMATIONS ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
