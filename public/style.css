@@ -2,13 +2,13 @@
   --red: #d62b2b;
   --red-dark: #a81f1f;
   --gold: #f0c040;
-  --bg: ##F5F5F5;
-  --bg2: #F5F5F5;
-  --bg3: #F5F5F5c;
-  --border: #949494;
-  --text: #090909;
-  --muted: #6d6969;
-  --card: #F5F5F5;
+  --bg: #0c0c0c;
+  --bg2: #141414;
+  --bg3: #1c1c1c;
+  --border: rgba(255, 255, 255, 0.07);
+  --text: #f0ede8;
+  --muted: #888880;
+  --card: #161616;
 }
 
 *,
@@ -52,7 +52,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(to bottom, rgba(78, 74, 74, 0.95), transparent);
+  background: linear-gradient(to bottom, rgba(12, 12, 12, 0.95), transparent);
   backdrop-filter: blur(4px);
 }
 
@@ -61,17 +61,6 @@ nav {
   align-items: center;
   gap: 12px;
   text-decoration: none;
-}
-
-.whatsapp-svg {
-  height: 5vh;
-  filter: invert(1) brightness(0.80);
-  user-select: none;
-}
-
-.whatsapp-svg:hover {
-  opacity: 50%;
-  transition: 0.3s;
 }
 
 .nav-logo svg {
@@ -86,7 +75,7 @@ nav {
 }
 
 .nav-links a {
-  color: rgb(234, 234, 234);
+  color: var(--muted);
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
@@ -95,7 +84,7 @@ nav {
   transition: color 0.2s;
 }
 .nav-links a:hover {
-  color: rgb(175, 175, 175);
+  color: var(--text);
 }
 
 .nav-cta {
@@ -166,7 +155,7 @@ h1 span {
 .hero-desc {
   font-size: 16px;
   line-height: 1.7;
-  color: var(--text);
+  color: var(--muted);
   max-width: 420px;
   margin-bottom: 48px;
 }
@@ -189,7 +178,7 @@ h1 span {
 
 .stat-label {
   font-size: 12px;
-  color: var(--text);
+  color: var(--muted);
   margin-top: 4px;
   letter-spacing: 0.05em;
 }
@@ -215,9 +204,8 @@ h1 span {
   inset: 0;
   background: url("https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=900&q=80&auto=format&fit=crop")
     center/cover no-repeat;
-  opacity: 0.68;
+  opacity: 0.18;
   mix-blend-mode: luminosity;
-  filter: invert(1);
 }
 
 /* red diagonal accent */
@@ -228,7 +216,7 @@ h1 span {
   top: 0;
   bottom: 0;
   width: 160px;
-  background: linear-gradient(to right, var(--red), transparent);
+  background: linear-gradient(to right, var(--bg), transparent);
   z-index: 1;
 }
 
@@ -248,7 +236,6 @@ h1 span {
   font-size: 28px;
   letter-spacing: 0.05em;
   margin-bottom: 6px;
-  color: #F5F5F5;
 }
 
 .form-card p {
@@ -269,7 +256,7 @@ h1 span {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: white;
+  color: var(--muted);
   margin-bottom: 7px;
 }
 
@@ -280,7 +267,7 @@ h1 span {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
   padding: 12px 16px;
-  color: white;
+  color: var(--text);
   font-family: "Manrope", sans-serif;
   font-size: 14px;
   outline: none;
@@ -301,7 +288,7 @@ h1 span {
 
 .form-group select option {
   background: #1c1c1c;
-  color: white;
+  color: var(--text);
 }
 
 .form-group input:focus,
@@ -441,7 +428,7 @@ h1 span {
 .section-header p {
   max-width: 340px;
   font-size: 15px;
-  color: var(--text);
+  color: var(--muted);
   line-height: 1.6;
   text-align: right;
 }
@@ -449,7 +436,7 @@ h1 span {
 .why-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 2px;
 }
 
 .why-card {
@@ -458,13 +445,10 @@ h1 span {
   position: relative;
   overflow: hidden;
   transition: background 0.3s;
-  border-radius: 4px;
-  border: 1px solid var(--border);
 }
 
 .why-card:hover {
-  background: #989898;
-  transition: 0.3s;
+  background: #1e1e1e;
 }
 
 .why-card::before {
@@ -496,12 +480,12 @@ h1 span {
   font-size: 17px;
   font-weight: 700;
   margin-bottom: 12px;
-  color: var(--red);
+  color: var(--text);
 }
 
 .why-card p {
   font-size: 14px;
-  color: var(--text);
+  color: var(--muted);
   line-height: 1.7;
 }
 
@@ -513,7 +497,7 @@ h1 span {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-top: 64px;
 }
@@ -536,7 +520,7 @@ h1 span {
 
 .price-card.featured {
   border-color: var(--red);
-  background: linear-gradient(135deg, #cfcfcf 0%, var(--card) 40%);
+  background: linear-gradient(135deg, #1a0808 0%, var(--card) 100%);
 }
 
 .price-badge {
@@ -546,7 +530,7 @@ h1 span {
   left: 50%;
   transform: translateX(-50%);
   background: var(--red);
-  color: #f6f6f6;
+  color: #fff;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -577,7 +561,7 @@ h1 span {
 
 .price-card .desc {
   font-size: 13px;
-  color: var(--text);
+  color: var(--muted);
   margin-bottom: 28px;
   line-height: 1.5;
 }
@@ -593,7 +577,7 @@ h1 span {
 
 .price-per {
   font-size: 13px;
-  color: var(--text);
+  color: var(--muted);
   margin-bottom: 28px;
 }
 
@@ -610,7 +594,7 @@ h1 span {
 
 .price-features li {
   font-size: 14px;
-  color: var(--text);
+  color: var(--muted);
   padding: 6px 0;
   display: flex;
   align-items: center;
@@ -646,7 +630,7 @@ h1 span {
 
 .btn-book-outline {
   background: transparent;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--text);
 }
 .btn-book-outline:hover {
