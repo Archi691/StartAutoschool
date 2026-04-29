@@ -1,0 +1,26 @@
+# Git
+.git
+.gitignore
+
+# Dependencies (will be installed in container)
+node_modules
+
+# Environment (passed via docker run --env-file)
+.env
+.env.example
+
+# Documentation
+README.md
+LICENSE
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log

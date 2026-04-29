@@ -72,7 +72,8 @@ function validatePayload(body) {
   const LESSONS = [
     'Урок по городу — 9 000 ₸',
     'Урок на автодроме — 8 000 ₸',
-    'Комбинированный урок — 9 000 ₸'
+    '3 урока по автодрому — 18 000 ₸',
+    '5 уроков по автодрому — 30 000 ₸'
   ];
   if (!lessonType || !LESSONS.includes(lessonType)) {
     errors.push('lessonType: выберите корректный тип урока');

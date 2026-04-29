@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#D62B2B"/>
+  <!-- Steering wheel -->
+  <circle cx="32" cy="34" r="18" fill="none" stroke="#fff" stroke-width="3.5"/>
+  <circle cx="32" cy="34" r="6" fill="none" stroke="#fff" stroke-width="3"/>
+  <!-- Spokes -->
+  <line x1="32" y1="28" x2="32" y2="16.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <line x1="26.5" y1="37.5" x2="17" y2="44" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <line x1="37.5" y1="37.5" x2="47" y2="44" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <!-- Arrow / triangle up -->
+  <polygon points="32,6 25,17 39,17" fill="#fff"/>
+</svg>

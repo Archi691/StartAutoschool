@@ -1,14 +1,31 @@
 # 🚗 Автошкола СТАРТ — Лендинг
 
+Современный лендинг автошколы СТАРТ (Алматы) с формой записи и интеграцией с Telegram.
+
+## ✨ Возможности
+
+- 🌓 Светлая и тёмная тема (с сохранением выбора)
+- 🌐 Мультиязычность: русский и казахский
+- 📱 Полностью адаптивный дизайн
+- 📨 Отправка заявок в Telegram
+- 🔍 SEO-оптимизация (meta, Open Graph, JSON-LD)
+
 ## Структура проекта
 
 ```
 ├── public/
-│   └── index.html      ← Фронтенд (лендинг)
-├── server.js           ← Node.js бэкенд (Express)
+│   ├── index.html        ← Фронтенд (лендинг)
+│   ├── style.css         ← Стили (светлая/тёмная тема)
+│   ├── theme.js          ← Переключатель тем
+│   ├── i18n.js           ← Мультиязычность (RU/KZ)
+│   └── assets/           ← Изображения, иконки
+├── server.js             ← Node.js бэкенд (Express)
 ├── package.json
-├── .env.example        ← Шаблон переменных окружения
-└── .env                ← Ваши настройки (создайте сами!)
+├── Dockerfile
+├── .dockerignore
+├── .gitignore
+├── .env.example          ← Шаблон переменных окружения
+└── .env                  ← Ваши настройки (не коммитить!)
 ```
 
 ## Быстрый старт
@@ -18,28 +35,13 @@
 npm install
 ```
 
-### 2. Настроить Telegram бота
-
-1. Откройте Telegram → найдите **@BotFather**
-2. Напишите `/newbot` → задайте название и username
-3. Скопируйте **токен** (формат: `123456789:AAF...`)
-4. Напишите вашему боту `/start`
-5. Откройте в браузере: `https://api.telegram.org/bot<ТОКЕН>/getUpdates`
-6. Найдите `"chat": {"id": 123456789}` — это ваш **chat_id**
-
-### 3. Создать .env файл
+### 2. Настроить .env файл
 ```bash
 cp .env.example .env
 ```
-Откройте `.env` и вставьте токен и chat_id.
+Откройте `.env` и вставьте Telegram Bot Token и Chat ID.
 
-### 4. Переместить index.html в папку public
-```bash
-mkdir -p public
-mv index.html public/
-```
-
-### 5. Запустить сервер
+### 3. Запустить сервер
 ```bash
 # Продакшн
 npm start
@@ -50,24 +52,40 @@ npm run dev
 
 Сайт будет доступен по адресу: **http://localhost:3000**
 
-## Что проверяет валидация формы
+## 🐳 Docker
 
-| Поле | Правило |
-|------|---------|
-| Имя и Фамилия | Минимум 2 слова, только буквы (кириллица/латиница), до 60 символов |
-| Телефон | 11 цифр, начинается с 7 (казахстанские и российские номера) |
-| Район | Обязательно из списка 8 районов Алматы |
-| Тип урока | Обязательно один из 3 вариантов |
-
-## Формат сообщения в Telegram
-
+### Собрать и запустить
+```bash
+docker build -t start-avtoshkola .
+docker run -d -p 3000:3000 --env-file .env --name start-web start-avtoshkola
 ```
-🚗 Новая заявка — Автошкола СТАРТ
 
-👤 Имя: Айдана Сейткали
-📞 Телефон: +7 (700) 123-45-67
-📍 Район: Медеуский район
-🎓 Тип урока: Урок на автодроме — 8 000 ₸
+## 🚀 Деплой
 
-🕐 Время заявки: 01.04.2025, 14:32 (Алматы)
+### GitHub
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/<username>/<repo>.git
+git push -u origin main
 ```
+
+### Сервер (с Docker)
+```bash
+# На сервере:
+git clone https://github.com/<username>/<repo>.git
+cd <repo>
+cp .env.example .env   # настроить токены
+docker build -t start-avtoshkola .
+docker run -d -p 3000:3000 --env-file .env --restart unless-stopped start-avtoshkola
+```
+
+## Настройка Telegram бота
+
+1. Откройте Telegram → найдите **@BotFather**
+2. Напишите `/newbot` → задайте название и username
+3. Скопируйте **токен** (формат: `123456789:AAF...`)
+4. Напишите вашему боту `/start`
+5. Откройте: `https://api.telegram.org/bot<ТОКЕН>/getUpdates`
+6. Найдите `"chat": {"id": 123456789}` — это ваш **chat_id**
